@@ -18,7 +18,7 @@ pip install -r requirements.txt
 ```
 
 ### Run examples 
-* Our method is designed to change textures of existing objects / augment the scene with semi-transparent effects (e.g., smoke, fire). It is not designed for adding new objects or significantly deviating from the original spatial layout.
+* Our method is designed to change textures of existing objects. It is not designed for adding new objects or significantly deviating from the original spatial layout.
 * Training **TEXTOC** multiple times with the same inputs can lead to slightly different results.
 
 The required GPU memory depends on the input image size.
