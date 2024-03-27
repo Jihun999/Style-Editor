@@ -11,7 +11,7 @@
 ### Installation
 
 ```
-git clone https://github.com/Jihun999/TEXTOC.git
+git clone https://github.com/qjwiflsdkf/TEXTOC_official.git
 conda create --name TEXTOC python=3.8
 conda activate TEXTOC 
 pip install -r requirements.txt
