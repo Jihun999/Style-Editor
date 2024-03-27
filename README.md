@@ -1,7 +1,7 @@
 # TEXTOC:  Text-driven Object-Centric Style Transfer
 <!-- ## [<a href="https://text2live.github.io/" target="_blank">Project Page</a>] -->
 
-![teaser](teaser.png)
+![teaser](teaser_image.png)
 
 
 [//]: # (### Abstract)
@@ -19,7 +19,7 @@ pip install -r requirements.txt
 
 ### Run examples 
 * Our method is designed to change textures of existing objects / augment the scene with semi-transparent effects (e.g., smoke, fire). It is not designed for adding new objects or significantly deviating from the original spatial layout.
-* Training **Text2LIVE** multiple times with the same inputs can lead to slightly different results.
+* Training **TEXTOC** multiple times with the same inputs can lead to slightly different results.
 
 The required GPU memory depends on the input image size.
 In this project with set the image size as 512 x 512.
