@@ -1,5 +1,5 @@
 python train.py \
-    --content_path examples/cake.png \
+    --content_path examples/butterfly.jpg \
     --save_dir "model_output" \
-    --content_name "sponge cake" \
-    --text "oreo"
+    --content_name "butterfly" \
+    --text "stained glass"
