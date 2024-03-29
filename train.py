@@ -146,7 +146,7 @@ def train(args):
         scheduler.step()
 
     if args.return_img:
-        out_path = os.path.join(save_dir, prompt + '_' + content + '_' + exp + '.jpg')
+        out_path = os.path.join(save_dir, prompt + '_' + content + '_' + exp + '.png')
         output_image = target.clone()
         vutils.save_image(output_image, out_path, nrow=1, normalize=True)
 
