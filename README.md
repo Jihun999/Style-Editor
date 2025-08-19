@@ -1,5 +1,9 @@
 # Style-Editor: Text-driven Object-centric Style Editing (CVPR 2025 highlight)
 
+Official implementation of Style Editor
+
+[**Style-Editor: Text-driven Object-centric Style Editing**](https://openaccess.thecvf.com/content/CVPR2025/html/Park_Style-Editor_Text-driven_Object-centric_Style_Editing_CVPR_2025_paper.html)  
+
 
 
 ![teaser](teaser_image.png)
@@ -13,7 +17,7 @@
 ### Installation
 
 ```
-git clone https://github.com/qjwiflsdkf/TEXTOC_official.git
+https://github.com/Jihun999/Style-Editor.git
 conda create --name style_editor python=3.9
 conda activate style_editor 
 pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu118
@@ -35,4 +39,20 @@ bash train.sh
 ```
 Results will be saved to `model_output`. 
 
-For more see the [Project page](https://jihun999.github.io/projects/Style-Editor/).
+## Acknowledgement
+This code is implemented on top of [CLIPstyler](https://github.com/cyclomon/CLIPstyler).
+
+We thank the authors for open-sourcing great projects and papers!
+
+## Citation
+Please kindly cite our paper if you use our code and data:
+
+```bibtex
+@inproceedings{park2025style,
+  title={Style-Editor: Text-driven object-centric style editing},
+  author={Park, Jihun and Gim, Jongmin and Lee, Kyoungmin and Lee, Seunghun and Im, Sunghoon},
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={18281--18291},
+  year={2025}
+}
+```
