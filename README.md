@@ -17,7 +17,7 @@ Official implementation of Style Editor
 ### Installation
 
 ```
-https://github.com/Jihun999/Style-Editor.git
+git clone https://github.com/Jihun999/Style-Editor.git
 conda create --name style_editor python=3.9
 conda activate style_editor 
 pip install -r requirements.txt
