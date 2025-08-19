@@ -2,7 +2,7 @@
 
 Official implementation of Style Editor
 
-[**Style-Editor: Text-driven Object-centric Style Editing**](https://openaccess.thecvf.com/content/CVPR2025/html/Park_Style-Editor_Text-driven_Object-centric_Style_Editing_CVPR_2025_paper.html)  
+[**Style-Editor: Text-driven Object-centric Style Editing**](https://jihun999.github.io/projects/Style-Editor/)  
 
 
 
