@@ -18,7 +18,6 @@ from torch import nn
 from torchvision.models import vgg19, VGG19_Weights
 from torchvision import transforms
 
-
 def train(args):
 
     save_dir = args.save_dir + '/'
@@ -93,7 +92,6 @@ def train(args):
 
         target_features = utils.get_features(utils.img_normalize(target, device), VGG)
         content_loss = 0
-
         content_loss += torch.mean((target_features['conv4_2'] - content_features['conv4_2']) ** 2)
         content_loss += torch.mean((target_features['conv5_2'] - content_features['conv5_2']) ** 2)
 
@@ -138,12 +136,12 @@ def train(args):
             img_l1_loss = torch.mean(mae_loss * target_loss_img)
         abp_loss = img_l1_loss + ms_ssim_loss
 
-        total_loss = 15000 * loss_patch + reg_tv + 400 * content_loss + 30000 * abp_loss + 30000 * loss_jsd            
-
+        total_loss = 15000 * loss_patch + reg_tv + 400 * content_loss + 30000 * abp_loss + 30000 * loss_jsd 
         optimizer.zero_grad()
         total_loss.backward(retain_graph=True)
         optimizer.step()
         scheduler.step()
+
 
     if args.return_img:
         out_path = os.path.join(save_dir, prompt + '_' + content + '_' + exp + '.png')
