@@ -20,7 +20,6 @@ Official implementation of Style Editor
 https://github.com/Jihun999/Style-Editor.git
 conda create --name style_editor python=3.9
 conda activate style_editor 
-pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu118
 pip install -r requirements.txt
 ```
 
