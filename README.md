@@ -1,8 +1,8 @@
 # Style-Editor: Text-driven Object-centric Style Editing (CVPR 2025 highlight)
 
-Official implementation of Style Editor
+Official implementation of Style-Editor: Text-driven Object-centric Style Editing
 
-[**Style-Editor: Text-driven Object-centric Style Editing**](https://jihun999.github.io/projects/Style-Editor/)  
+[Paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Park_Style-Editor_Text-driven_Object-centric_Style_Editing_CVPR_2025_paper.pdf) [Project page](https://jihun999.github.io/projects/Style-Editor/)  
 
 
 
@@ -17,7 +17,7 @@ Official implementation of Style Editor
 ### Installation
 
 ```
-https://github.com/Jihun999/Style-Editor.git
+git clone https://github.com/Jihun999/Style-Editor.git
 conda create --name style_editor python=3.9
 conda activate style_editor 
 pip install -r requirements.txt
