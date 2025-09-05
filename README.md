@@ -29,7 +29,7 @@ pip install -r requirements.txt
 * The source image, source text and style text are the input of our model.
 
 The required GPU memory depends on the input image size.
-In this project with set the image size as 512 x 512.
+In this project, we set the image size to **512 × 512**, which typically requires **more than 15 GB GPU memory**.
 
 #### Image style transfer
 Run the following command to start training
