@@ -119,8 +119,8 @@ def train(args):
         target_cos_sim = torch.cosine_similarity(glob_features, torch.cat([image_features, glob_features], dim=0))
         temperature_src = 0.5
         temperature_tgt = 2
-        source_cos_sim = nn.Softmax(dim=0)(source_cos_sim/temperature_src).detach()
-        target_cos_sim = nn.Softmax(dim=0)(target_cos_sim/temperature_tgt)
+        source_cos_sim = nn.Softmax(dim=0)(source_cos_sim/temperature_src)
+        target_cos_sim = nn.Softmax(dim=0)(target_cos_sim/temperature_tgt).detach()
  
         loss_jsd = get_jsd(source_cos_sim, target_cos_sim)
         
