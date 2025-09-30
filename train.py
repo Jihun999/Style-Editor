@@ -18,7 +18,6 @@ from torch import nn
 from torchvision.models import vgg19, VGG19_Weights
 from torchvision import transforms
 
-
 def train(args):
 
     save_dir = args.save_dir + '/'
@@ -84,8 +83,7 @@ def train(args):
         text_target /= text_target.norm(dim=-1, keepdim=True)
 
     print('source: ', source, ', prompt: ', prompt)
-    num_crops = args.num_crops
-    processor = tmps.TMPS(clip_model, device, num_crops, augment, text_source, args=args)
+    processor = tmps.TMPS(clip_model, device, augment, text_source, args=args)
     for epoch in tqdm(range(0, steps+1)):
         with autocast():
             target = style_net(content_image, use_sigmoid=True).to(device) # target_img
@@ -93,7 +91,6 @@ def train(args):
 
         target_features = utils.get_features(utils.img_normalize(target, device), VGG)
         content_loss = 0
-
         content_loss += torch.mean((target_features['conv4_2'] - content_features['conv4_2']) ** 2)
         content_loss += torch.mean((target_features['conv5_2'] - content_features['conv5_2']) ** 2)
 
@@ -115,8 +112,6 @@ def train(args):
 
         glob_features = clip_model.encode_image(utils.clip_normalize(target,device))
         glob_features /= (glob_features.clone().norm(dim=-1, keepdim=True))
-        glob_direction = (glob_features-source_features)
-        glob_direction /= glob_direction.clone().norm(dim=-1, keepdim=True)
 
         reg_tv = args.lambda_tv*utils.get_image_prior_losses(target)
 
@@ -138,15 +133,15 @@ def train(args):
             img_l1_loss = torch.mean(mae_loss * target_loss_img)
         abp_loss = img_l1_loss + ms_ssim_loss
 
-        total_loss = 15000 * loss_patch + reg_tv + 400 * content_loss + 30000 * abp_loss + 30000 * loss_jsd            
-
+        total_loss = args.lambda_patch * loss_patch + reg_tv + args.lambda_c * content_loss + args.lambda_abp * abp_loss + args.lambda_con * loss_jsd 
         optimizer.zero_grad()
         total_loss.backward(retain_graph=True)
         optimizer.step()
         scheduler.step()
 
+
     if args.return_img:
-        out_path = os.path.join(save_dir, prompt + '_' + content + '_' + exp + '.jpg')
+        out_path = os.path.join(save_dir, prompt + '_' + content + '_' + exp + '.png')
         output_image = target.clone()
         vutils.save_image(output_image, out_path, nrow=1, normalize=True)
 

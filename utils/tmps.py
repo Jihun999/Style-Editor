@@ -10,10 +10,10 @@ import numpy as np
 import torchvision.models.detection.anchor_utils as anchor_utils
 
 class TMPS:
-    def __init__(self, clip_model, device, num_crops, augment, text_source, args):
+    def __init__(self, clip_model, device, augment, text_source, args):
         self.clip_model = clip_model
         self.device = device
-        self.num_crops = num_crops
+        self.num_crops = 64 
         self.augment = augment
         self.img_proc_origin = []
         self.text_source = text_source
